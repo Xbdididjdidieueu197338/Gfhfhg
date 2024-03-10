@@ -14,11 +14,11 @@ function libary:CreateMain()
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
 	local SettingsPage = Instance.new("Frame")
-	local Rejoin = Instance.new("TextButton")
 	local UICorner_3 = Instance.new("UICorner")
 	local TextAnimationFrame = Instance.new("Frame")
 	local TextLabel_2 = Instance.new("TextLabel")
 	local replay = Instance.new("ImageLabel")
+	local Destroy = Instance.new("TextButton")
 	local UICorner_4 = Instance.new("UICorner")
 	local TextAnimationFrame_2 = Instance.new("Frame")
 	local TextLabel_3 = Instance.new("TextLabel")
@@ -30,7 +30,6 @@ function libary:CreateMain()
 	local UICorner_6 = Instance.new("UICorner")
 	local home = Instance.new("ImageButton")
 	local UICorner_7 = Instance.new("UICorner")
-	local respawn = Instance.new("ImageButton")
 	local search = Instance.new("ImageButton")
 	local TextBox = Instance.new("TextBox")
 	local UICorner_8 = Instance.new("UICorner")
@@ -154,18 +153,7 @@ PlayerImageCorner.Parent = PlayerImage
 	Credits.TextXAlignment = Enum.TextXAlignment.Left
 	Credits.TextYAlignment = Enum.TextYAlignment.Bottom
 
-	Rejoin.Name = "Rejoin"
-	Rejoin.Parent = SettingsPage
-	Rejoin.BackgroundColor3 = Color3.fromRGB(44, 47, 53)
-	Rejoin.Position = UDim2.new(0, 5, 0, 5)
-	Rejoin.Size = UDim2.new(0, 43, 0, 43)
-	Rejoin.AutoButtonColor = false
-	Rejoin.Font = Enum.Font.SourceSans
-	Rejoin.Text = ""
-	Rejoin.TextColor3 = Color3.fromRGB(0, 0, 0)
-	Rejoin.TextSize = 14.000
-
-	UICorner_3.Parent = Rejoin
+	
 
 	TextAnimationFrame.Name = "TextAnimationFrame"
 	TextAnimationFrame.Parent = Rejoin
@@ -200,7 +188,18 @@ PlayerImageCorner.Parent = PlayerImage
 	replay.ImageRectOffset = Vector2.new(244, 524)
 	replay.ImageRectSize = Vector2.new(36, 36)
 
-	
+	Destroy.Name = "Destroy"
+	Destroy.Parent = SettingsPage
+	Destroy.BackgroundColor3 = Color3.fromRGB(44, 47, 53)
+	Destroy.Position = UDim2.new(0, 73, 0, 5)
+	Destroy.Size = UDim2.new(0, 43, 0, 43)
+	Destroy.AutoButtonColor = false
+	Destroy.Font = Enum.Font.SourceSans
+	Destroy.Text = ""
+	Destroy.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Destroy.TextSize = 14.000
+
+	UICorner_4.Parent = Destroy
 
 	TextAnimationFrame_2.Name = "TextAnimationFrame"
 	TextAnimationFrame_2.Parent = Destroy
@@ -279,16 +278,7 @@ PlayerImageCorner.Parent = PlayerImage
 
 	UICorner_7.Parent = home
 
-	respawn.Name = "respawn"
-	respawn.Parent = Tabs
-	respawn.BackgroundTransparency = 1.000
-	respawn.Position = UDim2.new(0.332167864, 0, 0.205882356, 0)
-	respawn.Size = UDim2.new(0, 30, 0, 30)
-	respawn.ZIndex = 2
-	respawn.Image = "rbxassetid://3926307971"
-	respawn.ImageColor3 = Color3.fromRGB(150, 150, 150)
-	respawn.ImageRectOffset = Vector2.new(164, 124)
-	respawn.ImageRectSize = Vector2.new(36, 36)
+	
 
 	search.Name = "search"
 	search.Parent = ControlBar
