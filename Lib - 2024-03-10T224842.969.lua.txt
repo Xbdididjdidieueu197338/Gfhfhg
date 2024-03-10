@@ -14,6 +14,7 @@ function libary:CreateMain()
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
 	local SettingsPage = Instance.new("Frame")
+	local Rejoin = Instance.new("TextButton")
 	local UICorner_3 = Instance.new("UICorner")
 	local TextAnimationFrame = Instance.new("Frame")
 	local TextLabel_2 = Instance.new("TextLabel")
@@ -153,7 +154,18 @@ PlayerImageCorner.Parent = PlayerImage
 	Credits.TextXAlignment = Enum.TextXAlignment.Left
 	Credits.TextYAlignment = Enum.TextYAlignment.Bottom
 
-	
+	Rejoin.Name = "Rejoin"
+	Rejoin.Parent = SettingsPage
+	Rejoin.BackgroundColor3 = Color3.fromRGB(44, 47, 53)
+	Rejoin.Position = UDim2.new(0, 5, 0, 5)
+	Rejoin.Size = UDim2.new(0, 43, 0, 43)
+	Rejoin.AutoButtonColor = false
+	Rejoin.Font = Enum.Font.SourceSans
+	Rejoin.Text = ""
+	Rejoin.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Rejoin.TextSize = 14.000
+
+	UICorner_3.Parent = Rejoin
 
 	TextAnimationFrame.Name = "TextAnimationFrame"
 	TextAnimationFrame.Parent = Rejoin
