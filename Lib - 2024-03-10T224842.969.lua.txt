@@ -23,7 +23,6 @@ function libary:CreateMain()
 	local UICorner_4 = Instance.new("UICorner")
 	local TextAnimationFrame_2 = Instance.new("Frame")
 	local TextLabel_3 = Instance.new("TextLabel")
-	local close = Instance.new("ImageLabel")
 	local TextLabel_4 = Instance.new("TextLabel")
 	local ControlBar = Instance.new("Frame")
 	local UICorner_5 = Instance.new("UICorner")
@@ -148,7 +147,7 @@ PlayerImageCorner.Parent = PlayerImage
 	Credits.Position = UDim2.new(0.022, 0, 0.835390925, 0)
 	Credits.Size = UDim2.new(0, 118, 0, 40)
 	Credits.Font = Enum.Font.SourceSans
-	Credits.Text = "Made By Spect & aka & Blukez & Update By freedev"
+	Credits.Text = "Made By Spect & Blukez & Update By freedev"
 	Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Credits.TextScaled = true
 	Credits.TextSize = 14.000
@@ -235,17 +234,7 @@ PlayerImageCorner.Parent = PlayerImage
 	TextLabel_3.TextSize = 14.000
 	TextLabel_3.TextWrapped = true
 
-	close.Name = "close"
-	close.Parent = Destroy
-	close.Active = true
-	close.BackgroundTransparency = 1.000
-	close.Position = UDim2.new(0.149140537, 0, 0.151162788, 0)
-	close.Selectable = true
-	close.Size = UDim2.new(0, 29, 0, 29)
-	close.ZIndex = 2
-	close.Image = "rbxassetid://3926305904"
-	close.ImageRectOffset = Vector2.new(284, 4)
-	close.ImageRectSize = Vector2.new(24, 24)
+	
 
 	TextLabel_4.Parent = SettingsPage
 	TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
