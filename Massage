@@ -1,0 +1,101 @@
+local TweenService = game:GetService("TweenService")
+
+local intevo = Instance.new("ScreenGui")
+intevo.Name = "gdg"
+intevo.Parent = game.CoreGui
+
+local intevoFrame = Instance.new("Frame")
+intevoFrame.Size = UDim2.new(0, 179, 0, 55)
+intevoFrame.Position = UDim2.new(1, 0, 0, 190) -- Start position, fully off-screen to the right
+intevoFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)  
+intevoFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+intevoFrame.BorderSizePixel = 1
+intevoFrame.Active = true
+intevoFrame.Parent = intevo
+
+-- Create UICorner for the frame
+local FrameCorner1 = Instance.new("UICorner")
+FrameCorner1.Name = "FrameCorner1"
+FrameCorner1.Parent = intevoFrame
+
+
+local Notific = Instance.new("TextLabel")
+Notific.Name = "Notific"
+Notific.Parent = intevoFrame 
+Notific.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Notific.BackgroundTransparency = 1
+Notific.Position = UDim2.new(0, -100, 1, -40) 
+Notific.Size = UDim2.new(1, 120, 0, 20)
+Notific.Text = "ESP PLAYER "
+Notific.Font = Enum.Font.SourceSans
+Notific.TextColor3 = Color3.new(1, 1, 1)
+Notific.TextSize = 17
+
+Notific.TextStrokeTransparency = 0.5
+
+
+-- Define the target position (fully on-screen)
+local targetPosition = UDim2.new(0.8, 0, 0, 190)
+
+-- Define the tween info for the frame
+local tweenInfoFrame = TweenInfo.new(
+    1, -- Duration
+    Enum.EasingStyle.Quad, -- Easing style
+    Enum.EasingDirection.Out, -- Easing direction
+    0, -- Repeat count (zero means no repeat)
+    false, -- Reverses (false means do not reverse)
+    0 -- Delay
+)
+
+-- Define the tween for the frame
+local tweenFrame = TweenService:Create(intevoFrame, tweenInfoFrame, {Position = targetPosition})
+
+-- Play the tween for the frame
+tweenFrame:Play()
+
+-- Define line parameters
+local line = Instance.new("Frame")
+line.Size = UDim2.new(0, 0, 0, 2)
+line.Position = UDim2.new(0, 5, 1, -5) -- Starting from the bottom
+line.BackgroundColor3 = Color3.fromRGB(0, 155, 255) -- Line color
+line.BorderSizePixel = 0 -- Removed the border
+line.Parent = intevoFrame
+
+-- Define the target size for the line (1 unit per second for 5 seconds)
+local targetSize = UDim2.new(1, -10, 0, 2)
+
+-- Define the tween info for the line
+local tweenInfoLine = TweenInfo.new(
+    5, -- Duration (loading time: 5 seconds)
+    Enum.EasingStyle.Linear, -- Easing style (linear for constant speed)
+    Enum.EasingDirection.Out, -- Easing direction
+    0, -- Repeat count (zero means no repeat)
+    false, -- Reverses (false means do not reverse)
+    0 -- Delay
+)
+
+-- Define the tween for the line
+local tweenLine = TweenService:Create(line, tweenInfoLine, {Size = targetSize})
+
+-- Define the target position for the menu after loading
+local endPosition = UDim2.new(1, 0, 0, 190 + intevoFrame.AbsoluteSize.Y) -- Move menu off-screen to the right
+
+-- Define the tween info for the menu's disappearance
+local tweenInfoMenu = TweenInfo.new(
+    0.5, -- Duration (fast animation)
+    Enum.EasingStyle.Linear, -- Easing style (linear for constant speed)
+    Enum.EasingDirection.Out, -- Easing direction
+    0, -- Repeat count (zero means no repeat)
+    false, -- Reverses (false means do not reverse)
+    0 -- Delay
+)
+
+-- Define the tween for the menu's disappearance
+local tweenMenu = TweenService:Create(intevoFrame, tweenInfoMenu, {Position = endPosition})
+
+-- Play the line tween after the frame animation completes
+tweenFrame.Completed:Connect(function()
+    tweenLine:Play()
+    wait(5) -- Wait for the loading time (5 seconds)
+    tweenMenu:Play() -- Hide the menu after the loading completes
+end)
