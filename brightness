@@ -26,6 +26,7 @@ Notific.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Notific.BackgroundTransparency = 1
 Notific.Position = UDim2.new(0, -100, 1, -40) 
 Notific.Size = UDim2.new(1, 120, 0, 20)
+Notific.Text = "By Team Devil"
 Notific.Font = Enum.Font.SourceSans
 Notific.TextColor3 = Color3.new(1, 1, 1)
 Notific.TextSize = 17
